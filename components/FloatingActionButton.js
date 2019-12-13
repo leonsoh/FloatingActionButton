@@ -35,7 +35,7 @@ const FloatingActionButton = () => {
   const animateTiming = toValue => {
     Animated.timing(animation, {
       toValue: toValue,
-      duration: 500,
+      duration: 1000,
       useNativeDriver: true,
       easing: Easing.out(Easing.ease),
     }).start();
@@ -48,13 +48,28 @@ const FloatingActionButton = () => {
     });
   };
 
+  const actionTranslateY = {
+    transform: [
+      {
+        translateY: animation.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0, 100],
+        }),
+      },
+    ],
+  };
+
   return (
     <View style={styles.container}>
       {actions.map((action, index) => {
         return (
           <AnimatedTouchableOpacity
             key={index}
-            style={[styles.action, {opacity: opacityAnimation()}]}>
+            style={[
+              styles.action,
+              {opacity: opacityAnimation()},
+              actionTranslateY,
+            ]}>
             <Text style={styles.text}>{action.title}</Text>
           </AnimatedTouchableOpacity>
         );
@@ -63,7 +78,6 @@ const FloatingActionButton = () => {
       <TouchableOpacity
         style={styles.main}
         onPress={() => {
-          //open main button
           setActive(!active);
         }}
       />
@@ -90,6 +104,7 @@ const styles = StyleSheet.create({
     borderRadius: buttonSize / 2,
     backgroundColor: 'tomato',
     justifyContent: 'center',
+    marginBottom: 10,
   },
   text: {
     textAlign: 'center',
