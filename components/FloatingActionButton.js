@@ -1,12 +1,35 @@
 import React from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Animated, Easing} from 'react-native';
 
 const buttonSize = 80;
+
+const actions = [
+  {
+    title: "Edit",
+    onPress: ""
+  },
+  {
+    title: "View",
+    onPress: ""
+  }
+]
 
 const FloatingActionButton = () => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.main} />
+      {
+        actions.map((action, index) => {
+          return (
+            <View key={index} style={styles.main}/>
+          );
+        })
+      }
+
+      <TouchableOpacity 
+        style={styles.main} 
+        onPress={() => {
+          //open main button
+        }}/>
     </View>
   );
 };
@@ -22,7 +45,7 @@ const styles = StyleSheet.create({
     height: buttonSize,
     width: buttonSize,
     borderRadius: buttonSize / 2,
-    backgroundColor: "pink",
+    backgroundColor: 'pink',
   },
 
 });

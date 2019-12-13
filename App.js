@@ -1,12 +1,12 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
+import {View} from 'react-native';
 import FloatingActionButton from './components/FloatingActionButton';
 
 const App = () => {
   return (
-    <SafeAreaView>
+    <View>
       <FloatingActionButton />
-    </SafeAreaView>
+    </View>
   );
 };
 
