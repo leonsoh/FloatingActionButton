@@ -17,6 +17,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* FloatingActionButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FloatingActionButtonTests.m */; };
+		351BE7FB23A47C7C002FCB0E /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 351BE7FA23A47C7C002FCB0E /* Fonts */; };
 		50ED5805E821BEE1D90607CF /* libPods-FloatingActionButtonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D606B635780A64BD6CEF6A1F /* libPods-FloatingActionButtonTests.a */; };
 		852A9868C77F866C95F3129C /* libPods-FloatingActionButton-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A81070F9E517DD848B3875 /* libPods-FloatingActionButton-tvOS.a */; };
 		ED802CFCB809CEF96834C952 /* libPods-FloatingActionButton.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC361718EBB852A1DDD1D59 /* libPods-FloatingActionButton.a */; };
@@ -56,6 +57,7 @@
 		2D02E47B1E0B4A5D006451C7 /* FloatingActionButton-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FloatingActionButton-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* FloatingActionButton-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FloatingActionButton-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A81070F9E517DD848B3875 /* libPods-FloatingActionButton-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FloatingActionButton-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		351BE7FA23A47C7C002FCB0E /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
 		4CD907147363F8D4425A85C3 /* Pods-FloatingActionButton-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatingActionButton-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FloatingActionButton-tvOSTests/Pods-FloatingActionButton-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		634606AB3EDFFF547A36DCD6 /* Pods-FloatingActionButton-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatingActionButton-tvOS.release.xcconfig"; path = "Target Support Files/Pods-FloatingActionButton-tvOS/Pods-FloatingActionButton-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		8348FF319E095D752C1138C1 /* Pods-FloatingActionButton-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FloatingActionButton-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-FloatingActionButton-tvOS/Pods-FloatingActionButton-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,7 +163,6 @@
 				05A4A2712F9C358953D7F10E /* Pods-FloatingActionButtonTests.debug.xcconfig */,
 				F31F1B65D15097C181631B5B /* Pods-FloatingActionButtonTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -175,6 +176,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				351BE7FA23A47C7C002FCB0E /* Fonts */,
 				13B07FAE1A68108700A75B9A /* FloatingActionButton */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* FloatingActionButtonTests */,
@@ -308,6 +310,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -336,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				351BE7FB23A47C7C002FCB0E /* Fonts in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);

@@ -1,13 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Colors} from '../styles';
-import {
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-  Animated,
-  Easing,
-} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Text, Animated} from 'react-native';
 
 const buttonSize = 80;
 const actions = [
@@ -24,20 +16,16 @@ const actions = [
 const FloatingActionButton = () => {
   const [active, setActive] = useState(false);
   const [animation] = useState(new Animated.Value(1));
-  const AnimatedTouchableOpacity = Animated.createAnimatedComponent(
-    TouchableOpacity,
-  );
 
   useEffect(() => {
     active ? animateTiming(0) : animateTiming(1);
   });
 
   const animateTiming = toValue => {
-    Animated.timing(animation, {
+    Animated.spring(animation, {
       toValue: toValue,
-      duration: 1000,
+      duration: 500,
       useNativeDriver: true,
-      easing: Easing.out(Easing.ease),
     }).start();
   };
 
@@ -63,15 +51,17 @@ const FloatingActionButton = () => {
     <View style={styles.container}>
       {actions.map((action, index) => {
         return (
-          <AnimatedTouchableOpacity
+          <Animated.View
             key={index}
             style={[
-              styles.action,
+              styles.actionContainer,
               {opacity: opacityAnimation()},
               actionTranslateY,
             ]}>
-            <Text style={styles.text}>{action.title}</Text>
-          </AnimatedTouchableOpacity>
+            <TouchableOpacity style={styles.action}>
+              <Text style={styles.text}>{action.title}</Text>
+            </TouchableOpacity>
+          </Animated.View>
         );
       })}
 
@@ -92,6 +82,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  actionContainer: {
+    height: buttonSize,
+    width: buttonSize,
+    borderRadius: buttonSize / 2,
+    marginBottom: 10,
+  },
   main: {
     height: buttonSize,
     width: buttonSize,
@@ -99,12 +95,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF982BFF',
   },
   action: {
+    position: 'absolute',
     height: buttonSize,
     width: buttonSize,
     borderRadius: buttonSize / 2,
     backgroundColor: 'tomato',
     justifyContent: 'center',
-    marginBottom: 10,
   },
   text: {
     textAlign: 'center',
