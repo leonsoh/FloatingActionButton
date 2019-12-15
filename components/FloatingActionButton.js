@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, TouchableOpacity, Text, Animated} from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const buttonSize = 80;
 const actions = [
@@ -69,8 +70,9 @@ const FloatingActionButton = () => {
         style={styles.main}
         onPress={() => {
           setActive(!active);
-        }}
-      />
+        }}>
+        <Icon color={'black'} name="menuunfold" size={25} />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -92,6 +94,8 @@ const styles = StyleSheet.create({
     height: buttonSize,
     width: buttonSize,
     borderRadius: buttonSize / 2,
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#FF982BFF',
   },
   action: {
