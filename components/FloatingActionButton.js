@@ -41,7 +41,7 @@ const FloatingActionButton = () => {
     transform: [
       {
         translateY: animation.interpolate({
-          inputRange: [0, 1],
+          inputRange: [1, 2],
           outputRange: [0, 100],
         }),
       },
@@ -89,14 +89,19 @@ const styles = StyleSheet.create({
     width: buttonSize,
     borderRadius: buttonSize / 2,
     marginBottom: 10,
+    bottom: 40,
   },
   main: {
+    position: 'absolute',
     height: buttonSize,
     width: buttonSize,
     borderRadius: buttonSize / 2,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FF982BFF',
+    shadowOpacity: 0.25,
+    shadowOffset: {height: 0.5, width: 0.5},
+    elevation: 5,
   },
   action: {
     position: 'absolute',
@@ -105,6 +110,8 @@ const styles = StyleSheet.create({
     borderRadius: buttonSize / 2,
     backgroundColor: 'tomato',
     justifyContent: 'center',
+    shadowOpacity: 0.25,
+    shadowOffset: {height: 0.5, width: 0.5},
   },
   text: {
     textAlign: 'center',
